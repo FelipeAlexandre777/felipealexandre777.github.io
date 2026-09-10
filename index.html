@@ -3,52 +3,948 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags Importantes -->
-    <title>Felipe Alexandre Vieira Mendes | Portfólio de Programação</title>
-    <meta name="description" content="Portfólio de Felipe Alexandre Vieira Mendes. Estudante de programação focado em Python, JavaScript e desenvolvimento de sistemas e aplicações web.">
-    <meta name="keywords" content="Felipe Alexandre Vieira Mendes, FelipeAlexandre777, portfólio, Python, JavaScript, programação, desenvolvedor, GitHub">
+
+    <title>Felipe Alexandre Vieira Mendes | Desenvolvedor</title>
+
+    <meta name="description"
+          content="Portfólio de Felipe Alexandre Vieira Mendes. Estudante de programação com foco em Python, JavaScript e desenvolvimento web.">
+
     <meta name="author" content="Felipe Alexandre Vieira Mendes">
     <meta name="robots" content="index, follow">
 
-    <!-- Estilos Simples Baseados no GitHub -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Felipe Alexandre Vieira Mendes | Portfólio">
+    <meta property="og:description"
+          content="Portfólio profissional de Felipe Alexandre Vieira Mendes.">
+
+    <meta name="theme-color" content="#080b12">
+
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background-color: #0d1117; color: #c9d1d9; margin: 0; padding: 40px 20px; line-height: 1.6; }
-        .container { max-width: 600px; margin: 0 auto; background: #161b22; padding: 30px; border-radius: 6px; border: 1px solid #30363d; }
-        h1 { color: #f0f6fc; border-bottom: 1px solid #21262d; padding-bottom: 10px; font-size: 24px; }
-        h2 { color: #f0f6fc; font-size: 18px; margin-top: 25px; }
-        p { color: #8b949e; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 10px; }
-        a { color: #58a6ff; text-decoration: none; font-weight: bold; }
-        a:hover { text-decoration: underline; }
+
+        :root {
+            --bg: #080b12;
+            --bg-card: rgba(17, 24, 39, .75);
+            --border: rgba(148, 163, 184, .14);
+
+            --white: #f8fafc;
+            --text: #cbd5e1;
+            --muted: #94a3b8;
+
+            --blue: #60a5fa;
+            --cyan: #22d3ee;
+            --green: #4ade80;
+
+            --radius: 18px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            color: var(--white);
+            line-height: 1.7;
+
+            background:
+                radial-gradient(
+                    circle at 15% 10%,
+                    rgba(59, 130, 246, .13),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(34, 211, 238, .08),
+                    transparent 28%
+                ),
+                var(--bg);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(100% - 32px, 1000px);
+            margin: auto;
+            padding: 70px 0;
+        }
+
+        /* HERO */
+
+        .hero {
+            position: relative;
+
+            padding: 55px 45px;
+            margin-bottom: 30px;
+
+            border: 1px solid var(--border);
+            border-radius: 28px;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(17, 24, 39, .94),
+                    rgba(8, 12, 21, .88)
+                );
+
+            box-shadow:
+                0 25px 80px rgba(0, 0, 0, .35);
+        }
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 280px;
+            height: 280px;
+
+            top: -150px;
+            right: -80px;
+
+            background: var(--blue);
+            opacity: .08;
+
+            filter: blur(70px);
+            border-radius: 50%;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 7px 13px;
+            margin-bottom: 22px;
+
+            color: #bfdbfe;
+
+            background: rgba(59, 130, 246, .1);
+
+            border: 1px solid rgba(96, 165, 250, .2);
+            border-radius: 999px;
+
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .status {
+            width: 7px;
+            height: 7px;
+
+            background: var(--green);
+            border-radius: 50%;
+
+            box-shadow:
+                0 0 12px rgba(74, 222, 128, .8);
+        }
+
+        .hero h1 {
+            position: relative;
+            z-index: 1;
+
+            max-width: 800px;
+
+            margin-bottom: 18px;
+
+            font-size: clamp(38px, 7vw, 64px);
+            line-height: 1.05;
+            letter-spacing: -2px;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #ffffff 20%,
+                    #bfdbfe 55%,
+                    #67e8f9
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+        }
+
+        .subtitle {
+            position: relative;
+            z-index: 1;
+
+            margin-bottom: 15px;
+
+            color: var(--blue);
+
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .description {
+            position: relative;
+            z-index: 1;
+
+            max-width: 720px;
+
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+                /* SEÇÕES */
+
+        section {
+            margin-top: 35px;
+        }
+
+        .section-label {
+            margin-bottom: 4px;
+
+            color: var(--blue);
+
+            font-size: 12px;
+            font-weight: 700;
+
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            margin-bottom: 5px;
+
+            font-size: 26px;
+            letter-spacing: -.5px;
+        }
+
+        .section-description {
+            margin-bottom: 20px;
+            color: var(--muted);
+        }
+
+
+        /* PROJETOS */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .project {
+            display: flex;
+            flex-direction: column;
+
+            min-height: 225px;
+            padding: 24px;
+
+            background: var(--bg-card);
+
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+
+            backdrop-filter: blur(12px);
+
+            transition: .25s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+
+            border-color:
+                rgba(96, 165, 250, .35);
+
+            background:
+                rgba(22, 31, 49, .9);
+
+            box-shadow:
+                0 18px 45px rgba(0, 0, 0, .25);
+        }
+
+        .project-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 46px;
+            height: 46px;
+
+            margin-bottom: 18px;
+
+            background:
+                rgba(59, 130, 246, .1);
+
+            border:
+                1px solid rgba(96, 165, 250, .15);
+
+            border-radius: 12px;
+
+            font-size: 21px;
+        }
+
+        .project h3 {
+            margin-bottom: 8px;
+            font-size: 17px;
+        }
+
+        .project p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .technology {
+            margin-top: auto;
+            padding-top: 18px;
+
+            color: #93c5fd;
+
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+
+        /* TECNOLOGIAS */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            padding: 9px 14px;
+
+            color: var(--text);
+
+            background:
+                rgba(255, 255, 255, .025);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 10px;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            transition: .2s ease;
+        }
+
+        .skill:hover {
+            color: white;
+
+            background:
+                rgba(59, 130, 246, .08);
+
+            border-color:
+                rgba(96, 165, 250, .35);
+        }
+
+
+        /* LINKS */
+
+        .links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 17px 19px;
+
+            background: var(--bg-card);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 14px;
+
+            transition: .25s ease;
+        }
+
+        .link:hover {
+            transform: translateX(4px);
+
+            background:
+                rgba(22, 31, 49, .9);
+
+            border-color:
+                rgba(96, 165, 250, .35);
+        }
+
+        .link-left {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+        }
+
+        .link-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 40px;
+            height: 40px;
+
+            background:
+                rgba(255, 255, 255, .05);
+
+            border-radius: 10px;
+
+            font-size: 17px;
+        }
+
+        .link-name {
+            display: block;
+
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .link-info {
+            display: block;
+
+            color: var(--muted);
+
+            font-size: 12px;
+        }
+
+        .arrow {
+            color: var(--muted);
+            font-size: 18px;
+
+            transition: .2s ease;
+        }
+
+        .link:hover .arrow {
+            color: var(--blue);
+            transform: translateX(4px);
+        }
+        /* FOOTER */
+
+        footer {
+            margin-top: 55px;
+            padding-top: 25px;
+
+            border-top:
+                1px solid var(--border);
+
+            color: #64748b;
+
+            text-align: center;
+            font-size: 13px;
+        }
+
+        footer strong {
+            color: var(--text);
+        }
+
+
+        /* RESPONSIVO */
+
+        @media (max-width: 760px) {
+
+            .container {
+                padding: 30px 0;
+            }
+
+            .hero {
+                padding: 35px 25px;
+                border-radius: 22px;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .links {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .container {
+                width: min(100% - 20px, 1000px);
+            }
+
+            .hero {
+                padding: 30px 20px;
+            }
+
+            .hero h1 {
+                font-size: 37px;
+                letter-spacing: -1.5px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            .description {
+                font-size: 15px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+        }
+
+
+        /* ACESSIBILIDADE */
+
+        :focus-visible {
+            outline: 2px solid var(--blue);
+            outline-offset: 3px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition: none !important;
+            }
+        }
+
     </style>
 </head>
+
 <body>
 
-    <div class="container">
-        <!-- O Google lê esta tag principal para entender de quem é a página -->
-        <h1>Felipe Alexandre Vieira Mendes</h1>
-        <p><strong>Estudante de programação | Python e JavaScript</strong></p>
-        <p>Bem-vindo ao meu portfólio oficial. Aqui você encontra os meus principais projetos de desenvolvimento de software e conexões profissionais.</p>
+    <main class="container">
 
-        <h2>💻 Projetos em Destaque</h2>
-        <ul>
-            <li><strong>Sistema de Mensagens por Sockets:</strong> Criado utilizando comunicação em rede com Python.</li>
-            <li><strong>Calculadoras:</strong> Implementações lógicas e funcionais em Python.</li>
-            <li><strong>Desenvolvimento Web:</strong> Criação de interfaces e páginas com HTML5 e CSS3.</li>
-        </ul>
 
-        <h2>🔗 Links Oficiais e Contato</h2>
-        <ul>
-            <!-- Links com rel="me" indicam ao Google que esses perfis pertencem à mesma pessoa -->
-            <li><a href="https://github.com/FelipeAlexandre777" rel="me">Perfil Oficial no GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/felipealexandrevieiramendes" rel="me">LinkedIn Profissional</a></li>
-            <li><a href="http://lattes.cnpq.br/4717979804413198" rel="me">Currículo Lattes (CNPq)</a></li>
-            <li><a href="https://scholar.google.com/citations?view_op=list_works&hl=pt-BR&user=KUQrVyEAAAAJ" rel="me">Google Scholar</a></li>
-            <li><a href="https://www.academia.edu/165706612/TCC_Otimiza%C3%A7%C3%A3o_de_Instala%C3%A7%C3%B5es_El%C3%A9tricas_em_Pr%C3%A9dios_Residenciais_Optimization_of_Electrical_Installations_in_Residential_Buildings_" rel="me">Academia.edu (Publicações)</a></li>
-        </ul>
-    </div>
+        <!-- APRESENTAÇÃO -->
+
+        <header class="hero">
+
+            <div class="badge">
+                <span class="status"></span>
+                Disponível para oportunidades
+            </div>
+
+            <h1>
+                Felipe Alexandre Vieira Mendes
+            </h1>
+
+            <p class="subtitle">
+                Estudante de Programação · Python · JavaScript · Desenvolvimento Web
+            </p>
+
+            <p class="description">
+                Bem-vindo ao meu portfólio. Sou estudante de tecnologia e
+                programação, interessado no desenvolvimento de sistemas,
+                aplicações web e soluções utilizando diferentes tecnologias
+                de software.
+            </p>
+
+        </header>
+
+
+        <!-- PROJETOS -->
+
+        <section>
+
+            <p class="section-label">
+                Portfólio
+            </p>
+
+            <h2>
+                Projetos em destaque
+            </h2>
+
+            <p class="section-description">
+                Alguns dos projetos e experiências que fazem parte da minha
+                trajetória em tecnologia.
+            </p>
+
+
+            <div class="projects">
+
+
+                <article class="project">
+
+                    <div class="project-icon">
+                        🌐
+                    </div>
+
+                    <h3>
+                        Sistema de Mensagens por Sockets
+                    </h3>
+
+                    <p>
+                        Aplicação desenvolvida em Python explorando
+                        comunicação em rede e conceitos de programação
+                        com sockets.
+                    </p>
+
+                    <span class="technology">
+                        Python · Sockets · Redes
+                    </span>
+
+                </article>
+
+
+                <article class="project">
+
+                    <div class="project-icon">
+                        🧮
+                    </div>
+
+                    <h3>
+                        Calculadoras
+                    </h3>
+
+                    <p>
+                        Projetos focados na aplicação de lógica de
+                        programação, operações matemáticas e construção
+                        de soluções funcionais.
+                    </p>
+
+                    <span class="technology">
+                        Python · Lógica · Algoritmos
+                    </span>
+
+                </article>
+
+
+                <article class="project">
+
+                    <div class="project-icon">
+                        💻
+                    </div>
+
+                    <h3>
+                        Desenvolvimento Web
+                    </h3>
+
+                    <p>
+                        Criação de páginas e interfaces utilizando
+                        tecnologias fundamentais para a web, com foco
+                        em estrutura, design e responsividade.
+                    </p>
+
+                    <span class="technology">
+                        HTML5 · CSS3 · JavaScript
+                    </span>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- TECNOLOGIAS -->
+
+        <section>
+
+            <p class="section-label">
+                Tecnologias
+            </p>
+
+            <h2>
+                Conhecimentos
+            </h2>
+
+            <div class="skills">
+
+                <span class="skill">
+                    Python
+                </span>
+
+                <span class="skill">
+                    JavaScript
+                </span>
+
+                <span class="skill">
+                    HTML5
+                </span>
+
+                <span class="skill">
+                    CSS3
+                </span>
+
+                <span class="skill">
+                    Git
+                </span>
+
+                <span class="skill">
+                    GitHub
+                </span>
+
+                <span class="skill">
+                    Sockets
+                </span>
+
+                <span class="skill">
+                    Desenvolvimento Web
+                </span>
+
+                <span class="skill">
+                    Lógica de Programação
+                </span>
+
+                <span class="skill">
+                    Algoritmos
+                </span>
+
+            </div>
+
+        </section>
+        <!-- LINKS PROFISSIONAIS -->
+
+        <section>
+
+            <p class="section-label">
+                Conecte-se
+            </p>
+
+            <h2>
+                Links profissionais
+            </h2>
+
+            <p class="section-description">
+                Encontre meus projetos, trabalhos acadêmicos e perfis profissionais.
+            </p>
+
+
+            <div class="links">
+
+
+                <!-- GitHub -->
+
+                <a
+                    class="link"
+                    href="https://github.com/FelipeAlexandre777"
+                    target="_blank"
+                    rel="me noopener noreferrer"
+                >
+
+                    <div class="link-left">
+
+                        <div class="link-icon">
+                            ⌨️
+                        </div>
+
+                        <div>
+
+                            <span class="link-name">
+                                GitHub
+                            </span>
+
+                            <span class="link-info">
+                                FelipeAlexandre777
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- LinkedIn -->
+
+                <a
+                    class="link"
+                    href="https://www.linkedin.com/in/felipealexandrevieiramendes"
+                    target="_blank"
+                    rel="me noopener noreferrer"
+                >
+
+                    <div class="link-left">
+
+                        <div class="link-icon">
+                            💼
+                        </div>
+
+                        <div>
+
+                            <span class="link-name">
+                                LinkedIn
+                            </span>
+
+                            <span class="link-info">
+                                Perfil profissional
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- Currículo Lattes -->
+
+                <a
+                    class="link"
+                    href="http://lattes.cnpq.br/4717979804413198"
+                    target="_blank"
+                    rel="me noopener noreferrer"
+                >
+
+                    <div class="link-left">
+
+                        <div class="link-icon">
+                            🎓
+                        </div>
+
+                        <div>
+
+                            <span class="link-name">
+                                Currículo Lattes
+                            </span>
+
+                            <span class="link-info">
+                                CNPq · Perfil acadêmico
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- Google Scholar -->
+
+                <a
+                    class="link"
+                    href="https://scholar.google.com/citations?view_op=list_works&hl=pt-BR&user=KUQrVyEAAAAJ"
+                    target="_blank"
+                    rel="me noopener noreferrer"
+                >
+
+                    <div class="link-left">
+
+                        <div class="link-icon">
+                            📚
+                        </div>
+
+                        <div>
+
+                            <span class="link-name">
+                                Google Scholar
+                            </span>
+
+                            <span class="link-info">
+                                Publicações acadêmicas
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- Academia.edu -->
+
+                <a
+                    class="link"
+                    href="https://www.academia.edu/165706612/TCC_Otimiza%C3%A7%C3%A3o_de_Instala%C3%A7%C3%B5es_El%C3%A9tricas_em_Pr%C3%A9dios_Residenciais_Optimization_of_Electrical_Installations_in_Residential_Buildings_"
+                    target="_blank"
+                    rel="me noopener noreferrer"
+                >
+
+                    <div class="link-left">
+
+                        <div class="link-icon">
+                            📖
+                        </div>
+
+                        <div>
+
+                            <span class="link-name">
+                                Academia.edu
+                            </span>
+
+                            <span class="link-info">
+                                TCC e publicações
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- RODAPÉ -->
+
+        <footer>
+
+            <p>
+                © <span id="year"></span>
+                <strong>Felipe Alexandre Vieira Mendes</strong>.
+                Todos os direitos reservados.
+            </p>
+
+        </footer>
+
+
+    </main>
+
+
+    <!-- ANO AUTOMÁTICO -->
+
+    <script>
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+    </script>
+
 
 </body>
 </html>
